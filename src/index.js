@@ -1,6 +1,15 @@
+module.exports = function towelSort(matrix) {
+    if (!matrix || !matrix.length) {
+        return [];
+    }
 
-// You should implement your task here.
+    const transformedMatrix = matrix.map((array, i) => {
+        if (i % 2 === 0) {
+            return array;
+        } else {
+            return array.reverse();
+        }
+    });
 
-module.exports = function towelSort (matrix) {
-  return [];
-}
+    return transformedMatrix.flat();
+};
